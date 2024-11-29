@@ -1,0 +1,36 @@
+services:
+  microsservice-get:
+    build: ./microsservice-get
+    container_name: microsservice-get
+    ports:
+      - "3001:3001"
+    networks:
+      - microsservices-network
+
+  microsservice-post:
+    build: ./microsservice-post
+    container_name: microsservice-post
+    ports:
+      - "3002:3002"
+    networks:
+      - microsservices-network
+
+  microsservice-put:
+    build: ./microsservice-put
+    container_name: microsservice-put
+    ports:
+      - "3003:3003"
+    networks:
+      - microsservices-network
+
+  microsservice-delete:
+    build: ./microsservice-delete
+    container_name: microsservice-delete
+    ports:
+      - "3004:3004"
+    networks:
+      - microsservices-network
+
+networks:
+  microsservices-network:
+    driver: bridge
